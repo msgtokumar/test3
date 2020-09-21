@@ -1,16 +1,17 @@
-package de.rieckpil.blog;
+package com.assign.task;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
+import sun.misc.Version;
 
-@SpringBootApplication(scanBasePackages = { "de.rieckpil.blog" })
-public class CommitIdApplication {
+@SpringBootApplication(scanBasePackages = { "com.assign.task" })
+public class VersionIdApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CommitIdApplication.class, args);
+        SpringApplication.run(VersionIdApplication.class, args);
     }
 
     @Bean

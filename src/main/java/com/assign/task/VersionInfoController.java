@@ -1,4 +1,4 @@
-package de.rieckpil.blog;
+package com.assign.task;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-public class CommitInfoController {
+public class VersionInfoController {
 
     @Value("${git.commit.message.short}")
     private String commitMessage;
@@ -19,11 +19,9 @@ public class CommitInfoController {
     @Value("${git.commit.id}")
     private String commitId;
 
-    @GetMapping("/commitId")
-    public Map<String, String> getCommitId() {
+    @GetMapping("/version")
+    public Map<String, String> getVersion() {
         Map<String, String> result = new HashMap<>();
-
-
         result.put("description", commitMessage);
         result.put("version", version);
         result.put("lastcommitsha", commitId);

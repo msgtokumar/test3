@@ -1,4 +1,4 @@
-package de.rieckpil.blog;
+package com.assign.task;
 
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +18,7 @@ public class ApplicationTests {
   public void actuatorEndpointContainsGitInformation() {
     this.webTestClient
       .get()
-      .uri("/commitId")
+      .uri("/version")
       .exchange()
       .expectBody()
       .jsonPath("$.lastcommitsha").isNotEmpty()
