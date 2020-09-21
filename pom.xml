@@ -47,6 +47,7 @@
           <groupId>org.junit.vintage</groupId>
           <artifactId>junit-vintage-engine</artifactId>
         </exclusion>
+
       </exclusions>
     </dependency>
   </dependencies>
@@ -62,12 +63,31 @@
             <goals>
               <goal>build-info</goal>
             </goals>
+
           </execution>
         </executions>
       </plugin>
       <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
+        <version> 4.0.2</version>
+        <executions>
+          <execution>
+            <id>get-the-git-infos</id>
+            <goals>
+              <goal>revision</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>validate-the-git-infos</id>
+            <goals>
+              <goal>validateRevision</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <generateGitPropertiesFile>true</generateGitPropertiesFile>
+        </configuration>
       </plugin>
     </plugins>
   </build>

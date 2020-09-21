@@ -18,12 +18,13 @@ public class ApplicationTests {
   public void actuatorEndpointContainsGitInformation() {
     this.webTestClient
       .get()
-      .uri("/actuator/info")
+      .uri("/commitId")
       .exchange()
       .expectBody()
-      .jsonPath("$.git.branch").isNotEmpty()
-      .jsonPath("$.git.commit.id").isNotEmpty()
-      .jsonPath("$.git.commit.time").isNotEmpty();
+      .jsonPath("$.lastcommitsha").isNotEmpty()
+      .jsonPath("$.description").isNotEmpty()
+      .jsonPath("$.version").isNotEmpty();
+
   }
 
 }
